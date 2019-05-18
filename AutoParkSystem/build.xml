@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="AutoParkSystem">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="C:/Users/thewa/eclipse/java-latest-released/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="C:/Users/thewa/.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="C:/Users/thewa/.p2/pool/plugins/org.hamcrest.core_1.3.0.v20180420-1519.jar"/>
+    </path>
+    <path id="AutoParkSystem.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="AddVehicleTest">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.AddVehicleTest" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="AllTests">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.AllTests" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="Example2GUI">
+        <java classname="proje.Example2GUI" failonerror="true" fork="yes">
+            <classpath refid="AutoParkSystem.classpath"/>
+        </java>
+    </target>
+    <target name="ExampleGUI">
+        <java classname="proje.ExampleGUI" failonerror="true" fork="yes">
+            <classpath refid="AutoParkSystem.classpath"/>
+        </java>
+    </target>
+    <target name="JAVASwingFormExample">
+        <java classname="proje.JAVASwingFormExample" failonerror="true" fork="yes">
+            <classpath refid="AutoParkSystem.classpath"/>
+        </java>
+    </target>
+    <target name="main">
+        <java classname="proje.Main" failonerror="true" fork="yes">
+            <classpath refid="AutoParkSystem.classpath"/>
+        </java>
+    </target>
+    <target name="OtoparkGUI">
+        <java classname="proje.OtoparkGUI" failonerror="true" fork="yes">
+            <classpath refid="AutoParkSystem.classpath"/>
+        </java>
+    </target>
+    <target name="Test (7)">
+        <java classname="proje.Test" failonerror="true" fork="yes">
+            <classpath refid="AutoParkSystem.classpath"/>
+        </java>
+    </target>
+    <target name="Test.gui">
+        <java classname="testtt.Test$gui" failonerror="true" fork="yes">
+            <classpath refid="AutoParkSystem.classpath"/>
+        </java>
+    </target>
+    <target name="TestAddVehicle">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.TestAddVehicle" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="TestFindVehicle">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.TestFindVehicle" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="TestIncomeDaily">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.TestIncomeDaily" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="TestIndexofParkRecord">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.TestIndexofParkRecord" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="TestIsParked">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.TestIsParked" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="TestSearchParkRecord">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.TestSearchParkRecord" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="TestSearchVehicle">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.TestSearchVehicle" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="TestVehicleEnters">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.TestVehicleEnters" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="TestVehicleExits">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="proje.TestVehicleExits" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="AutoParkSystem.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
